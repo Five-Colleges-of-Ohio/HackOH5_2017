@@ -1,3 +1,7 @@
 # the data is too big for a repo
 input_files/
 oh5_json_data/
+models/
+txtModels/
+TSVs/
+test/
