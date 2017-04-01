@@ -1,3 +1,8 @@
+'''
+Extract model information into a txt file
+Usage: python model_to_txt.py input.model output.txt
+'''
+
 from gensim.models import word2vec
 import sys
 

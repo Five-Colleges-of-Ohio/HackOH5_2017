@@ -1,3 +1,8 @@
+'''
+Generate TSV files from model text
+Usage: python extract_word_metadata.py input.txt vectorOutput.tsv labelOutput.tsv
+'''
+
 import re
 import sys
 

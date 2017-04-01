@@ -1,13 +1,21 @@
 '''
-Generates TSV files for all years for all schools
-python createTSV.py
+Generate vector and label TSV files
+
+Usage: python createTSVs_search.py minYear maxYear [school]
 '''
+
 
 from subprocess import call
 import os
 import sys
 
-# call(["python get_txt_from_json.py 1990 1999"]) # uncomment if you need to extract data from get_txt_from_json
+min_year = int(sys.argv[1])
+max_year = int(sys.argv[2])
+s = None
+if len(sys.argv) > 3:
+	s = sys.argv[3]
+
+# call(["python get_txt_from_json.py " + min_year + " " + max_year + (" " + s) if not s == None else ""])
 
 if not os.path.exists("models/"):
 	os.makedirs("models/")
@@ -19,10 +27,12 @@ if not os.path.exists("TSVs/"):
 	os.makedirs("TSVs/")
 
 schools = os.listdir("input_files/")
+if not s == None:
+	schools = [s]
 for school in schools:
-	years = os.listdir("input_files/" + school + "/")
+	years = range(min_year, max_year + 1)
 	for y in years:
-		year = y[0:4]
+		year = str(y)
 		print("Processing " + school.upper() + " articles from " + year + "...")
 
 		# Create .model file

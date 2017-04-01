@@ -1,3 +1,8 @@
+'''
+Generate model files
+Usage python trainword2vec.py input.txt output.model
+'''
+
 #!/usr/bin/env python
 import logging
 import os.path

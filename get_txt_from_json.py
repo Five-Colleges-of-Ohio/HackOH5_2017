@@ -1,12 +1,16 @@
-''' Load data into easy to read txt files from JSON '''
+'''
+Load data into easy to read txt files from JSON
+Usage: python get_txt_from_json.py minYear maxYear
+'''
 import json
 import os
 from datetime import datetime
+import sys
 
 schools = ["wooster", "denison", "kenyon", "oberlin", "wesleyan"]
 
-minYear = 1990
-maxYear = 1999
+minYear = int(sys.argv[1])
+maxYear = int(sys.argv[2])
 
 if not os.path.exists("input_files/"):
 	os.makedirs("input_files/")
